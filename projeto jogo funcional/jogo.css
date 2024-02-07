@@ -1,0 +1,427 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Outfit', sans-serif;
+}
+
+body{
+    height: 900vh;
+    background-color: rgb(49, 49, 49);
+}
+
+nav.menu-lateral{
+    width: 80px;
+    height: 100%;
+    background-color: #202020;
+    padding: 40px 0 40px 1%;
+    box-shadow: 3px 0 0 blue;
+    overflow: hidden;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    transition: .5s;
+}
+
+nav.menu-lateral.expandir{
+    width: 300px;
+}
+
+.btn-expandir{
+    width: 100%;
+    padding-left: 20px;
+}
+
+.btn-expandir > i{
+    color:#fff;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+ul{
+    height: 100%;
+    list-style-type: none;
+}
+
+ul li.item-menu{
+    transition: .2s;
+}
+
+ul li.ativo{
+    background-color: blue;
+}
+
+ul li.item-menu:hover{
+    background-color: blue;
+}
+
+ul li.item-menu a{
+    color: #fff;
+    text-decoration: none;
+    font-size: 20px;
+    padding: 20px 4%;
+    display: flex;
+    margin-bottom: 20px;
+    line-height: 100px;
+}
+
+ul li.item-menu a .txt-link{
+    margin-left: 70px;
+    transition: .5s;
+    opacity: 0;
+}
+
+nav.menu-lateral.expandir .txt-link{
+    margin-left: 40px;
+    opacity: 1;
+}
+ul li.item-menu a .icon > i{
+    font-size: 30px;
+    margin-left: 10px;
+}
+
+
+
+
+.board {
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    grid-template-rows: repeat(3, 100px);
+    gap: 5px;
+  }
+  
+  .cell {
+    width: 100px;
+    height: 100px;
+    border: 1px solid #ccc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    cursor: pointer;
+  }
+
+  body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+  }
+  
+  .board {
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    grid-template-rows: repeat(3, 100px);
+    gap: 5px;
+  }
+  
+  
+  #resetButton {
+    margin-top: 20px;
+  }
+
+  body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f4f4f4;
+    font-family: 'Arial', sans-serif;
+    background-color: #333;
+  }
+  
+  .board {
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    grid-template-rows: repeat(3, 100px);
+    gap: 5px;
+    background-color: #153fca;
+    border: 5px solid #333;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .cell {
+    width: 100px;
+    height: 100px;
+    border: 1px solid #ccc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .cell:hover {
+    background-color: #e0e0e0;
+  }
+  
+  #resetButton {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #4caf50;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  #resetButton:hover {
+    background-color: #45a049;
+  }
+
+  /* Adicione essas classes CSS */
+
+.cell.winning {
+    animation: flash 1s ease-in-out;
+  }
+  
+  @keyframes flash {
+    0%, 100% {
+      background-color: #ffd700; /* Cor de destaque (amarelo) */
+    }
+    50% {
+      background-color: #fff; /* Cor original do fundo */
+    }
+  }
+  
+  
+  /* Adicione este estilo para destacar as linhas vencedoras */
+
+.board.winning {
+    border: 5px solid #4caf50; /* Cor da borda (verde) */
+    border-radius: 10px;
+  }
+  
+  .cell.winning {
+    animation: flash 1s ease-in-out;
+    background-color: #ffd700; /* Cor de destaque (amarelo) */
+  }
+  
+  /* Restante do código CSS permanece inalterado */
+
+  #resetButton {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #4caf50;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, box-shadow 0.3s;
+    position: relative;
+  }
+  
+  #resetButton:hover {
+    background-color: #45a049;
+    box-shadow: 0 0 10px rgba(0, 255, 0, 0.8), 0 0 20px rgba(0, 255, 0, 0.6), 0 0 30px rgba(0, 255, 0, 0.4), 0 0 40px rgba(0, 255, 0, 0.2);
+  }
+  
+  #resetButton::before,
+  #resetButton::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 255, 0, 0.8), 0 0 20px rgba(0, 255, 0, 0.6), 0 0 30px rgba(0, 255, 0, 0.4), 0 0 40px rgba(0, 255, 0, 0.2);
+    opacity: 0;
+    z-index: -1;
+    transition: opacity 0.3s;
+  }
+  
+  #resetButton:hover::before,
+  #resetButton:hover::after {
+    opacity: 1;
+  }
+
+  /* Adicione estas classes CSS */
+  .cell.x {
+    color: #f1c40f; /* Amarelo */
+    text-shadow: 0 0 10px #f1c40f, 0 0 20px #f1c40f, 0 0 30px #f1c40f, 0 0 40px #f1c40f;
+  }
+  
+  .cell.o {
+    color: #2ecc71; /* Verde */
+    text-shadow: 0 0 10px #2ecc71, 0 0 20px #2ecc71, 0 0 30px #2ecc71, 0 0 40px #2ecc71;
+  }
+  
+  /* Restante do código CSS permanece inalterado */
+  
+  /* Restante do código CSS permanece inalterado */
+  
+  
+  #resetButton {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #4caf50;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, box-shadow 0.3s;
+    position: relative;
+  }
+  
+  #resetButton:hover {
+    background-color: #45a049;
+    box-shadow: 0 0 10px rgba(0, 255, 0, 0.8), 0 0 20px rgba(0, 255, 0, 0.6), 0 0 30px rgba(0, 255, 0, 0.4), 0 0 40px rgba(0, 255, 0, 0.2);
+  }
+  
+  #resetButton::before,
+  #resetButton::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 255, 0, 0.8), 0 0 20px rgba(0, 255, 0, 0.6), 0 0 30px rgba(0, 255, 0, 0.4), 0 0 40px rgba(0, 255, 0, 0.2);
+    opacity: 0;
+    z-index: -1;
+    transition: opacity 0.3s;
+  }
+  
+  #resetButton:hover::before,
+  #resetButton:hover::after {
+    opacity: 1;
+  }
+  
+  body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #282c34; /* Cor de fundo mais escura */
+    font-family: 'Arial', sans-serif;
+  }
+  
+  .board {
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    grid-template-rows: repeat(3, 100px);
+    gap: 5px;
+    background-color: #2c3e50; /* Cor de fundo do tabuleiro */
+    border: 5px solid #3498db; /* Cor da borda (azul) */
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  .cell {
+    width: 100px;
+    height: 100px;
+    border: none; /* Removendo a borda da célula */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    cursor: pointer;
+    background-color: #2c3e50; /* Cor de fundo da célula */
+    color: #ecf0f1; /* Cor do texto na célula */
+    border-radius: 5px;
+    transition: background-color 0.3s;
+  }
+  
+  .cell:hover {
+    background-color: #34495e;} 
+
+    .board.winning {
+        border: 5px solid #3498db; /* Cor da borda (azul) */
+        box-shadow: 0 0 10px rgba(52, 152, 219, 0.8), 0 0 20px rgba(52, 152, 219, 0.6), 0 0 30px rgba(52, 152, 219, 0.4), 0 0 40px rgba(52, 152, 219, 0.2);
+      }
+
+      /* Exemplo de adição de ícones para X e O usando Font Awesome */
+.cell.x::before {
+    content: "\f00d"; /* Código Unicode para o ícone X do Font Awesome */
+    font-family: 'Font Awesome 5 Free';
+  }
+  
+  .cell.o::before {
+    content: "\f10c"; /* Código Unicode para o ícone O do Font Awesome */
+    font-family: 'Font Awesome 5 Free';
+  }
+  
+  /* Adição de gradientes e sombras */
+  .board {
+    background: linear-gradient(45deg, #3498db, #2ecc71); /* Gradiente azul para verde */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  }
+  
+  .cell {
+    background-color: #000000;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s;
+  }
+  
+  .cell:hover {
+    background-color: #000000;
+  }
+  
+  #resetButton {
+    background: linear-gradient(45deg, #4caf50, #45a049); /* Gradiente verde para verde escuro */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    transition: background-color 0.3s, box-shadow 0.3s;
+  }
+  
+  #resetButton:hover {
+    background-color: #0011a7;
+  }
+  
+/* Adicione estas regras para os ícones X e O */
+.cell.x::before {
+    content: "\f00d"; /* Código Unicode para o ícone X do Font Awesome */
+    font-family: 'Font Awesome 5 Free';
+    font-size: 24px;
+  }
+  
+  .cell.o::before {
+    content: "\f10c"; /* Código Unicode para o ícone O do Font Awesome */
+    font-family: 'Font Awesome 5 Free';
+    font-size: 24px;
+  }
+
+  
+  /* Adicione estas regras CSS */
+
+#scoreboard {
+    display: flex;
+    margin-left: 1000px;
+    align-items: flex-end;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+  }
+  
+  .score {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    color: #ccc;
+  }
+  
+  .score i {
+    margin-right: 5px;
+  }
+  
+  /* Restante do seu código CSS permanece inalterado */
+  
+  h1{
+    color: #2ecc71;
+  }

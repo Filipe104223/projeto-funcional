@@ -1,0 +1,225 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.game-board {
+    width: 80%;
+    height: 500px;
+    border: 15px solid rgb(64, 209, 64);
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(#87ceeb, #e0f6ff);
+}
+
+.cano {
+    position: absolute;
+    bottom: 0;
+    width: 80px;
+    right: -80px;
+    animation: cano-animation 1s infinite linear;
+}
+
+.mario {
+    width: 150px;
+    position: absolute;
+    bottom: 0;
+}
+
+.jump{
+    animation: jump 500ms ease-out;
+
+}
+
+.clouds {
+    position: absolute;
+    width: 450px;
+    animation: clouds-animation 10s infinite linear;
+}
+
+@keyframes cano-animation{
+    from {
+        right: -80;
+    }
+
+    to {
+        right: 100%;
+    }
+}
+
+@keyframes jump {
+
+    0% {
+        bottom: 0;
+    }
+
+    40% {
+        bottom: 190px;
+    }
+
+    50% {
+        bottom: 190px;
+    }
+
+    60% {
+        bottom: 190%px;
+    }
+
+    100% {
+        bottom: 0;
+    }
+
+}
+
+@keyframes clouds-animation {
+    from {
+        right: 0;
+    }
+
+    to {
+        right: 100%;
+    }
+}
+
+
+
+ 
+#resetButton {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #006eff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, box-shadow 0.3s;
+    position: absolute;
+    margin-left: 0;
+    margin: 100px;
+    left: 520px;
+  }
+  
+  #resetButton:hover {
+    background-color: #1cbac5;
+    box-shadow: 0 0 10px rgba(99, 255, 255, 0.8), 0 0 20px rgba(86, 255, 255, 0.6), 0 0 30px rgb(39, 108, 136), 0 0 40px rgba(0, 255, 0, 0.2);
+  }
+  
+  #resetButton::before,
+  #resetButton::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgb(90, 244, 255), 0 0 20px rgb(37, 151, 136), 0 0 30px rgba(57, 255, 255, 0.4), 0 0 40px rgba(0, 255, 0, 0.2);
+    opacity: 0;
+    z-index: -1;
+    transition: opacity 0.3s;
+  }
+  
+  #resetButton:hover::before,
+  #resetButton:hover::after {
+    opacity: 1;
+  }
+
+
+h1{
+    left: 550px;
+    position: absolute;
+    font-family: sans-serif;
+    color: #fff;
+}
+
+body {
+    background-color: #000000;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Outfit', sans-serif;
+}
+
+body{
+    height: vh;
+    background-color: rgb(49, 49, 49);
+}
+
+nav.menu-lateral{
+    width: 80px;
+    height: 100%;
+    background-color: #202020;
+    padding: 40px 0 40px 1%;
+    box-shadow: 3px 0 0 blue;
+    overflow: hidden;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    transition: .5s;
+}
+
+nav.menu-lateral.expandir{
+    width: 300px;
+}
+
+.btn-expandir{
+    width: 100%;
+    padding-left: 20px;
+}
+
+.btn-expandir > i{
+    color:#fff;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+ul{
+    height: 100%;
+    list-style-type: none;
+}
+
+ul li.item-menu{
+    transition: .2s;
+}
+
+ul li.ativo{
+    background-color: blue;
+}
+
+ul li.item-menu:hover{
+    background-color: blue;
+}
+
+ul li.item-menu a{
+    color: #fff;
+    text-decoration: none;
+    font-size: 20px;
+    padding: 20px 4%;
+    display: flex;
+    margin-bottom: 20px;
+    line-height: 100px;
+}
+
+ul li.item-menu a .txt-link{
+    margin-left: 70px;
+    transition: .5s;
+    opacity: 0;
+}
+
+nav.menu-lateral.expandir .txt-link{
+    margin-left: 40px;
+    opacity: 1;
+}
+ul li.item-menu a .icon > i{
+    font-size: 30px;
+    margin-left: 10px;
+}
